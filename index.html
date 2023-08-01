@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <div id="title">Is Micomet Saikou?</div>
+    <div id="line"></div>
+
+    <div id="answer">Yes.</div>
+</body>
+
+</html>
+
+<script>
+(function() {
+    const ans = [
+        "Yes.",
+        "Of course.",
+        "Definitely.",
+        "UWOOOOOOOOOOOOOOOOOOOOOO",
+        "Yep.",
+        "I'm positive.",
+        "Actually it's spelled MiComet",
+        "Ask your mochi.",
+        "Buhi.",
+        "No shit sherlock.",
+        "It will be when they release the Kimagure Mercy cover.",
+        "uwu",
+        "Go watch a stream or something, go away.",
+    ];
+    const max = ans.length - 1;
+    let i = +(sessionStorage['next'] || -1);
+    if (i < max) i += 1;
+    sessionStorage['next'] = i + '';
+
+    document.getElementById("answer").innerText = ans[i];
+})();
+</script>
+
+<style>
+    body {
+        margin: 0;
+        background-color: #333;
+    }
+    #title {
+        font: 5vh "Sans-Serif";
+        color: #ccc;
+        margin: 10vh 0 2vh;
+        width: 100%;
+        text-align: center;
+    }
+
+    #line {
+        width: 50vh;
+        height: 0.5vh;
+        background: linear-gradient(to right, rgb(255, 168, 183) 50%, #52b0e2 50%);
+        margin: 0 auto;
+    }
+
+    #answer {
+        font: 3vh "Sans-Serif";
+        color: #eee;
+        margin: 10vh 0 2vh;
+        width: 100%;
+        text-align: center;
+    }
+
+</style>
